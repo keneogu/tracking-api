@@ -10,6 +10,12 @@ module Api
 				end
 			end
 
+			def destroy
+				routine = Routine.find(params[:id])
+				routine.destroy
+				render json: routine
+			end
+
 			private
 
 			def routine_params

@@ -13,6 +13,12 @@ module Api
 				end
 			end
 
+			def destroy
+				meal = Meal.find(params[:id])
+				meal.destroy
+				render json: meal
+			end
+
 			private
 
 			def meal_params
