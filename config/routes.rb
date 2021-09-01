@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: :create
       resource :sessions, only: %i[create show]
 
-      resources :routines, only: :create do
+      resources :routines, only: %i[index create] do
         resources :meals, only: :create
       end
     end

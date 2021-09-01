@@ -1,6 +1,11 @@
 module Api
 	module V1
 		class RoutinesController < ApplicationController
+			def index
+				routines = Current.user.routines
+				render json: routines
+			end
+			
 			def create
 				routine = Current.user.routines.build(routine_params)
 				if routine.save
