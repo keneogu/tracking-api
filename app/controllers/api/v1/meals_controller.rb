@@ -1,6 +1,11 @@
 module Api
 	module V1
 		class MealsController < ApplicationController
+			def index
+				meals = Current.user.meals
+				render json: meals
+			end
+
 			def create
 				routine = Routine.find(params[:routine_id])
 				meal = routine.meals.build(meal_params)

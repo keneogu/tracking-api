@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :routines, only: %i[index create] do
         resources :meals, only: :create
       end
+      resources :meals, only: %i[index]
     end
   end
 end
